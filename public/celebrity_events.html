@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Celebrity Events</title>
+
+    <!-- Bootstrap & Swiper CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/celebrity_events.css">
+</head>
+
+<body>
+
+    <!-- Transparent Navbar -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-transparent">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand fw-bold text-primary outline-none" href="#">
+                <i class="bi bi-gem me-1"></i>YourBrand
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse gap-5" id="mainNavbar">
+                <ul class="navbar-nav text-center ms-auto mb-2 mb-lg-0 gap-4">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#serve">Services</a>
+                    </li>
+
+                    <!-- Button to Open Modal -->
+                    <button type="button" class="btn text-muted" data-bs-toggle="modal" data-bs-target="#contactModal"
+                        id="cont_btn">
+                        Contact
+                    </button>
+                </ul>
+
+                <!-- Modern Animated Social Media Icons -->
+                <div class="d-none d-lg-flex align-items-center ms-5" id="socialMediaIcons">
+                    <span class="text-uppercase fw-semibold me-3">Follow Us :</span>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Celebrity Events -->
+    <section
+        class="celebrity-hero position-relative text-white text-center d-flex align-items-center justify-content-center">
+        <div class="overlay"></div>
+        <img src="images/services_img/celebrityEvents.jpeg" class="img-fluid hero-bg" alt="Celebrity Event Background">
+        <div class="hero-content animate__animated animate__fadeInUp">
+            <h1 class="display-4 fw-bold">Celebrity Events</h1>
+            <p class="lead">Red carpets, flashing lights, and star-studded experiences tailored with excellence.</p>
+            <button type="button" class="btn btn-outline-primary" id="toggleFormBtn">
+                Book Your Event
+            </button>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Form Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content animate__animated animate__fadeInUp">
+
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="contactModalLabel">Let's Connect</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <form class="needs-validation" id="contactForm" onsubmit="return handleFormSubmit(event)" novalidate>
+                    <div class="modal-body px-4">
+                        <div class="row g-3">
+                            <!-- Full Name -->
+                            <div class="col-md-6 form-floating">
+                                <input type="text" class="form-control" id="name" placeholder="Full Name" required
+                                    minlength="3" maxlength="50">
+                                <label for="name">Full Name</label>
+                                <div class="invalid-feedback">Please enter 3–50 characters.</div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6 form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <label for="email">Email Address</label>
+                                <div class="invalid-feedback">Enter a valid email address.</div>
+                            </div>
+
+                            <!-- Contact Number -->
+                            <div class="col-md-6 form-floating">
+                                <input type="tel" class="form-control" id="phone" placeholder="Contact Number" required
+                                    minlength="10" maxlength="10">
+                                <label for="phone">Contact Number</label>
+                                <div class="invalid-feedback">Enter a valid 10-digit number.</div>
+                            </div>
+
+                            <!-- Subject -->
+                            <div class="col-md-6 form-floating">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" required
+                                    minlength="3" maxlength="100">
+                                <label for="subject">Subject</label>
+                                <div class="invalid-feedback">Subject must be between 3 and 100 characters.</div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="col-12">
+                                <label for="message" class="form-label mt-3">Message</label>
+                                <textarea class="form-control" id="message" rows="4" required minlength="10"
+                                    maxlength="500" placeholder="Your message here..."></textarea>
+                                <div class="invalid-feedback">Message should be 10–500 characters long.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer px-4 pb-4">
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- event form  -->
+
+    <div class="container mt-5 mb-5" id="inquiryForm" style="display: none;">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="text-center mb-4">🌟 Celebrity Event Booking & Inquiry Form</h2>
+                <p class="text-muted text-center">For Appearances, Performances, Meet & Greets, and VIP Collaborations
+                </p>
+
+                <form action="#" method="POST">
+
+                    <!-- Client Info -->
+                    <h5 class="mt-4">👤 Organizer Information</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="company" class="form-label">Company / Brand (if applicable)</label>
+                            <input type="text" class="form-control" id="company" name="company">
+                        </div>
+                    </div>
+
+                    <!-- Event Info -->
+                    <h5 class="mt-4">🎤 Event Details</h5>
+                    <div class="mb-3">
+                        <label for="eventType" class="form-label">Type of Event</label>
+                        <select class="form-select" id="eventType" name="eventType" required>
+                            <option selected disabled>Choose...</option>
+                            <option>Red Carpet / Premiere</option>
+                            <option>VIP Private Party</option>
+                            <option>Meet & Greet</option>
+                            <option>Product Launch / Brand Collaboration</option>
+                            <option>Speaking Engagement</option>
+                            <option>Performance / Appearance</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="eventName" class="form-label">Event Name or Title</label>
+                        <input type="text" class="form-control" id="eventName" name="eventName">
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="eventDate" class="form-label">Event Date</label>
+                            <input type="date" class="form-control" id="eventDate" name="eventDate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventTime" class="form-label">Event Time</label>
+                            <input type="time" class="form-control" id="eventTime" name="eventTime">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 mt-3">
+                        <label for="eventLocation" class="form-label">Event Location (Venue/City)</label>
+                        <input type="text" class="form-control" id="eventLocation" name="eventLocation">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="attendees" class="form-label">Expected Number of Attendees</label>
+                        <input type="number" class="form-control" id="attendees" name="attendees">
+                    </div>
+
+                    <!-- Celebrity Info -->
+                    <h5 class="mt-4">🌟 Celebrity Details</h5>
+                    <div class="mb-3">
+                        <label for="celebrity" class="form-label">Preferred Celebrity / Talent Name</label>
+                        <input type="text" class="form-control" id="celebrity" name="celebrity">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="reason" class="form-label">Reason for Booking / Role at Event</label>
+                        <textarea class="form-control" id="reason" name="reason" rows="3"
+                            placeholder="e.g., Host, Guest, Performer, Speaker..."></textarea>
+                    </div>
+
+                    <!-- Budget & Logistics -->
+                    <h5 class="mt-4">💰 Budget & Logistics</h5>
+                    <div class="mb-3">
+                        <label for="budget" class="form-label">Estimated Talent Budget</label>
+                        <select class="form-select" id="budget" name="budget">
+                            <option selected disabled>Select One</option>
+                            <option>Under $5,000</option>
+                            <option>$5,000 – $15,000</option>
+                            <option>$15,000 – $50,000</option>
+                            <option>$50,000 – $100,000</option>
+                            <option>$100,000+</option>
+                            <option>Open to Discussion</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="travel" class="form-label">Travel / Accommodation Covered?</label>
+                        <select class="form-select" id="travel" name="travel">
+                            <option selected disabled>Select</option>
+                            <option>Yes, all expenses covered</option>
+                            <option>Partial coverage</option>
+                            <option>No (local talent only)</option>
+                        </select>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">Additional Notes or Requests</label>
+                        <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark btn-lg">Submit Event Request</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section  -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-md-left">
+            <div class="row">
+
+                <!-- Company Info -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <h5 class="text-uppercase fw-bold mb-4">
+                        <i class="bi bi-gem me-2"></i>YourBrand
+                    </h5>
+                    <p>Building innovative solutions that shape the future. Let's make something great together.</p>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Links</h6>
+                    <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">About</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Services</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="bi bi-house-door me-2"></i>123 Street, City, Country</p>
+                    <p><i class="bi bi-envelope me-2"></i>info@yourbrand.com</p>
+                    <p><i class="bi bi-phone me-2"></i>+123 456 7890</p>
+                </div>
+
+                <!-- Social & Newsletter -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <form class="d-flex">
+                            <input type="email" class="form-control form-control-sm me-2" placeholder="Subscribe">
+                            <button class="btn btn-sm btn-outline-light">Go</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-center mt-4">
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2025 YourBrand. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/celebrity_events.js"></script>
+</body>
+
+</html>

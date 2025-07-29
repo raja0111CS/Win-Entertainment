@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marketing & Advertising</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/marketing.css">
+</head>
+
+<body>
+
+    <!-- Transparent Navbar -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-transparent">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand fw-bold text-primary outline-none" href="#">
+                <i class="bi bi-gem me-1"></i>YourBrand
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse gap-5" id="mainNavbar">
+                <ul class="navbar-nav text-center ms-auto mb-2 mb-lg-0 gap-4">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#serve">Services</a>
+                    </li>
+
+                    <!-- Button to Open Modal -->
+                    <button type="button" class="btn text-muted" data-bs-toggle="modal" data-bs-target="#contactModal"
+                        id="cont_btn">
+                        Contact
+                    </button>
+                </ul>
+
+                <!-- Modern Animated Social Media Icons -->
+                <div class="d-none d-lg-flex align-items-center ms-5" id="socialMediaIcons">
+                    <span class="text-uppercase fw-semibold me-3">Follow Us :</span>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section
+        class="celebrity-hero position-relative text-white text-center d-flex align-items-center justify-content-center">
+        <div class="overlay"></div>
+        <img src="images/services_img/marketing.jpeg" class="img-fluid hero-bg" alt="Marketing Campaign Background">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold">Marketing, Product Permotion and Advatisment That Drives Results</h1>
+            <p class="lead">
+                Promote your products with compelling campaigns, innovative strategies, and audience-first storytelling.
+            </p>
+            <button type="button" class="btn btn-outline-primary" id="toggleFormBtn">
+                Launch Your Campaign
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="contactModalLabel">Let's Connect</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <form class="needs-validation" novalidate>
+                    <div class="modal-body px-4">
+                        <div class="row g-3">
+                            <div class="col-md-6 form-floating">
+                                <input type="text" class="form-control" id="name" placeholder="Full Name" required
+                                    minlength="3" maxlength="50">
+                                <label for="name">Full Name</label>
+                                <div class="invalid-feedback">Please enter 3–50 characters.</div>
+                            </div>
+                            <div class="col-md-6 form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <label for="email">Email Address</label>
+                                <div class="invalid-feedback">Enter a valid email address.</div>
+                            </div>
+                            <div class="col-md-6 form-floating">
+                                <input type="tel" class="form-control" id="phone" placeholder="Contact Number" required
+                                    minlength="10" maxlength="10">
+                                <label for="phone">Contact Number</label>
+                                <div class="invalid-feedback">Enter a valid 10-digit number.</div>
+                            </div>
+                            <div class="col-md-6 form-floating">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" required
+                                    minlength="3" maxlength="100">
+                                <label for="subject">Subject</label>
+                                <div class="invalid-feedback">Subject must be between 3 and 100 characters.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label mt-3">Message</label>
+                                <textarea class="form-control" id="message" rows="4" required minlength="10"
+                                    maxlength="500" placeholder="Your message here..."></textarea>
+                                <div class="invalid-feedback">Message should be 10–500 characters long.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer px-4 pb-4">
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- this is the form data  -->
+
+    <div class="container mt-5 mb-5" id="inquiryForm" style="display: none;">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="mb-4 text-center">📈 Marketing & Advertising Inquiry Form</h2>
+                <p class="text-muted text-center">For Product Promotion, Campaigns & Brand Growth</p>
+
+                <form action="#" method="POST">
+
+                    <!-- Client Info -->
+                    <h5 class="mt-4">👤 Client Information</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="company" class="form-label">Company / Brand Name</label>
+                            <input type="text" class="form-control" id="company" name="company">
+                        </div>
+                        <div class="col-12">
+                            <label for="website" class="form-label">Website / Social Media</label>
+                            <input type="text" class="form-control" id="website" name="website">
+                        </div>
+                    </div>
+
+                    <!-- Project Overview -->
+                    <h5 class="mt-4">📢 Project Overview</h5>
+                    <div class="mb-3">
+                        <label for="product" class="form-label">Product or Service to Promote</label>
+                        <input type="text" class="form-control" id="product" name="product" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="goal" class="form-label">Primary Marketing Goal</label>
+                        <select class="form-select" id="goal" name="goal" required>
+                            <option selected disabled>Select One</option>
+                            <option>Increase Sales</option>
+                            <option>Generate Leads</option>
+                            <option>Boost Brand Awareness</option>
+                            <option>Promote Event or Launch</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="audience" class="form-label">Target Audience</label>
+                        <textarea class="form-control" id="audience" name="audience" rows="3"
+                            placeholder="Describe the audience by demographics, interests, location, etc."></textarea>
+                    </div>
+
+                    <!-- Services Needed -->
+                    <h5 class="mt-4">💼 Services Required</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="service1" name="services[]"
+                                    value="Social Media Marketing">
+                                <label class="form-check-label" for="service1">Social Media Marketing</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="service2" name="services[]"
+                                    value="Paid Ads (Google, Facebook, Instagram)">
+                                <label class="form-check-label" for="service2">Paid Ads (Google, Facebook,
+                                    Instagram)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="service3" name="services[]"
+                                    value="Influencer Marketing">
+                                <label class="form-check-label" for="service3">Influencer Marketing</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="service4" name="services[]"
+                                    value="Content Creation">
+                                <label class="form-check-label" for="service4">Content Creation</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="service5" name="services[]"
+                                    value="Email Marketing">
+                                <label class="form-check-label" for="service5">Email Marketing</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="service6" name="services[]"
+                                    value="Other">
+                                <label class="form-check-label" for="service6">Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Details -->
+                    <h5 class="mt-4">📆 Campaign Timeline & Budget</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="startDate" class="form-label">Preferred Start Date</label>
+                            <input type="date" class="form-control" id="startDate" name="startDate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="duration" class="form-label">Estimated Duration</label>
+                            <select class="form-select" id="duration" name="duration">
+                                <option selected disabled>Select Duration</option>
+                                <option>1-2 Weeks</option>
+                                <option>1 Month</option>
+                                <option>3 Months</option>
+                                <option>Ongoing</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 mt-3">
+                        <label for="budget" class="form-label">Estimated Budget</label>
+                        <select class="form-select" id="budget" name="budget">
+                            <option selected disabled>Select Budget</option>
+                            <option>Under $500</option>
+                            <option>$500 - $1,500</option>
+                            <option>$1,500 - $5,000</option>
+                            <option>$5,000+</option>
+                            <option>Flexible / Open to Proposal</option>
+                        </select>
+                    </div>
+
+                    <!-- Additional Notes -->
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">Additional Notes or Questions</label>
+                        <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-success btn-lg">Submit Request</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-md-left">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <h5 class="text-uppercase fw-bold mb-4">
+                        <i class="bi bi-gem me-2"></i>YourBrand
+                    </h5>
+                    <p>Building innovative solutions that shape the future. Let's make something great together.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Links</h6>
+                    <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">About</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Services</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="bi bi-house-door me-2"></i>123 Street, City, Country</p>
+                    <p><i class="bi bi-envelope me-2"></i>info@yourbrand.com</p>
+                    <p><i class="bi bi-phone me-2"></i>+123 456 7890</p>
+                </div>
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
+                    <div class="d-flex mb-3">
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <form class="d-flex">
+                        <input type="email" class="form-control form-control-sm me-2" placeholder="Your Email">
+                        <button class="btn btn-sm btn-outline-light" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2025 YourBrand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/marketing.js"></script>
+</body>
+
+</html>
